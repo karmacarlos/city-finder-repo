@@ -8,9 +8,7 @@ import { StyledEngineProvider } from '@mui/material/styles';
 
 const router = (
   <BrowserRouter>
-    {" "}
     <App />
-    {" "}
   </BrowserRouter>
 )
 
