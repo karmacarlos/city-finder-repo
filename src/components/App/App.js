@@ -9,15 +9,11 @@ import Overview from '../Overview/Overview';
 
 
 function App(props) {
-  const [ query, setQuery ] = useState('')
-  
   // const [ comparisonChart, setComparisonChart ] = useState([])
   const history = useHistory()
 
   const defineQuery = (cityType) => {
-    const cityUrlName = cityType.split(' ').join('_')
-    setQuery(cityUrlName)
-    history.push(`search/${cityUrlName}`)
+    history.push(`search/${cityType}`)
   }
 
   return (
@@ -25,9 +21,9 @@ function App(props) {
       <Switch>
         <Route exact path='/' render={() => <LandingPage handleClick={defineQuery} />} />
         <Route exact path='/search/:cityType' render={( { match } ) => {
-          return  <SearchResults query={query} />
+          return  <SearchResults match={match} />
         }} />
-        <Route exact path='/:city/:state' render={( { match } ) => <Overview match={ match } />} />
+        <Route exact path='/:city/:state/:lat/:lon' render={( { match } ) => <Overview match={ match } />} />
       </Switch>
     </div>
   );
