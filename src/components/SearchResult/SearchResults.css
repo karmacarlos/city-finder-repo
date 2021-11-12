@@ -1,0 +1,19 @@
+.search-view {
+  background-color: #03588C;
+  color: white;
+  font-size: 30px;
+  height: auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cities-pool {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 100vw;
+  padding-bottom: 90px;
+}

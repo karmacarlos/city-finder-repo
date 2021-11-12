@@ -86,13 +86,14 @@ const ImageMarked = styled('span')(({ theme }) => ({
   transition: theme.transitions.create('opacity'),
 }));
 
-export default function ButtonBases() {
+export default function ButtonBases( { handleClick } ) {
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', minWidth: 300, width: '100%' }}>
       {images.map((image) => (
         <ImageButton
           focusRipple
           key={image.title}
+          onClick={() => handleClick(image.title)}
           style={{
             width: image.width,
           }}
