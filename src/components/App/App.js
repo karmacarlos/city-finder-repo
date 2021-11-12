@@ -5,6 +5,7 @@ import { Route, Switch, useHistory } from 'react-router-dom'
 import LandingPage from '../LandingPage/LandingPage'
 // import { getCities, getCitySummary, getWalkScores } from '../../apiCalls'
 import SearchResults from '../SearchResult/SearchResults'
+import Overview from '../Overview/Overview';
 
 
 function App(props) {
@@ -26,7 +27,7 @@ function App(props) {
         <Route exact path='/search/:cityType' render={( { match } ) => {
           return  <SearchResults query={query} />
         }} />
-        
+        <Route exact path='/:city/:state' render={( { match } ) => <Overview match={ match } />} />
       </Switch>
     </div>
   );
