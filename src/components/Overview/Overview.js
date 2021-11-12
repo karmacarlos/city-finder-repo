@@ -6,6 +6,7 @@ import './Overview.css'
 
 const Overview = ( { match } ) => {
   const [ cityDetails, setCityDetails ] = useState({})
+  const [ walkScores, setWalkScores ] = useState({})
   
   const city = match.params.city
   const state = match.params.state
@@ -26,7 +27,7 @@ const Overview = ( { match } ) => {
           extract: data.extract,
           image: data.originalimage.source,
         }
-        setCityDetails({...cityObject})
+        return setCityDetails({...cityObject})
       } else {
         const cityObject = {
           latitude: lat,
@@ -36,14 +37,13 @@ const Overview = ( { match } ) => {
           state: state,
           extract: data.extract,
         }
-        setCityDetails({...cityObject})
+        return setCityDetails({...cityObject})
       }
     })
-    .then(() => getWalkScores(city, state, lat, lon))
+    getWalkScores(city, state, lat, lon)
     .then(data => {
       // console.log(data)
-      setCityDetails({
-        ...cityDetails,
+      setWalkScores({
         walkScore: data.walkscore,
         walkDescription: data.description,
         bikeDescription: data.bike.description,
@@ -54,7 +54,12 @@ const Overview = ( { match } ) => {
 
   return ( 
     <div className='overview'>
-      <h1>I'm rendering</h1>
+      <h1>{cityDetails.displayTitle}</h1>
+      <div className='city-dashboard'>
+        {cityDetails.image ? <img alt={`${cityDetails.displayTitle}`} src={cityDetails.image} /> :
+        <h2>We are sorry, we don't have an image for this city</h2>}
+        <Card />        
+      </div>
     </div>
    );
 }

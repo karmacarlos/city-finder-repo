@@ -10,16 +10,11 @@ import Overview from '../Overview/Overview';
 
 function App(props) {
   // const [ comparisonChart, setComparisonChart ] = useState([])
-  const history = useHistory()
-
-  const defineQuery = (cityType) => {
-    history.push(`search/${cityType}`)
-  }
-
+  
   return (
     <div className="App">
       <Switch>
-        <Route exact path='/' render={() => <LandingPage handleClick={defineQuery} />} />
+        <Route exact path='/' render={() => <LandingPage />} />
         <Route exact path='/search/:cityType' render={( { match } ) => {
           return  <SearchResults match={match} />
         }} />
