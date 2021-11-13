@@ -5,28 +5,23 @@ import { Route, Switch, useHistory } from 'react-router-dom'
 import LandingPage from '../LandingPage/LandingPage'
 // import { getCities, getCitySummary, getWalkScores } from '../../apiCalls'
 import SearchResults from '../SearchResult/SearchResults'
+import Overview from '../Overview/Overview';
 
 
 function App(props) {
-  const [ query, setQuery ] = useState('')
-  
   // const [ comparisonChart, setComparisonChart ] = useState([])
-  const history = useHistory()
-
-  const defineQuery = (cityType) => {
-    const cityUrlName = cityType.split(' ').join('_')
-    setQuery(cityUrlName)
-    history.push(`search/${cityUrlName}`)
-  }
+  // const queryParam = 50000
+  // fetch(`http://localhost:3001/geoDB/${queryParam}`)
+  // .then(response => response.json()).then(data => console.log(data))
 
   return (
     <div className="App">
       <Switch>
-        <Route exact path='/' render={() => <LandingPage handleClick={defineQuery} />} />
+        <Route exact path='/' render={() => <LandingPage />} />
         <Route exact path='/search/:cityType' render={( { match } ) => {
-          return  <SearchResults query={query} />
+          return  <SearchResults match={match} />
         }} />
-        
+        <Route exact path='/:city/:state/:lat/:lon' render={( { match } ) => <Overview match={ match } />} />
       </Switch>
     </div>
   );

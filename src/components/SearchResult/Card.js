@@ -4,8 +4,14 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useHistory } from 'react-router-dom'
 
-export default function BasicCard( { city, state, population } ) {
+export default function BasicCard( { city, state, population, lat, lon } ) {
+  const history = useHistory()
+  const showOverview = () => {
+    history.push(`/${city}/${state}/${lat}/${lon}`)
+  }
+
   return (
     <Card sx={{ width: 275, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <CardContent>
@@ -20,7 +26,7 @@ export default function BasicCard( { city, state, population } ) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small" onClick={() => showOverview()}>Learn More</Button>
       </CardActions>
     </Card>
   );

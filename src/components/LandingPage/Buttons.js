@@ -3,6 +3,8 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
+import { useHistory } from 'react-router';
+import uniqueString from 'unique-string';
 
 const images = [
   {
@@ -86,14 +88,20 @@ const ImageMarked = styled('span')(({ theme }) => ({
   transition: theme.transitions.create('opacity'),
 }));
 
-export default function ButtonBases( { handleClick } ) {
+export default function ButtonBases() {
+
+  const history = useHistory()
+  const setUrl = (cityType) => {
+    history.push(`search/${cityType}`)
+  }
+
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', minWidth: 300, width: '100%' }}>
       {images.map((image) => (
         <ImageButton
           focusRipple
-          key={image.title}
-          onClick={() => handleClick(image.title)}
+          key={uniqueString()}
+          onClick={() => setUrl(image.title)}
           style={{
             width: image.width,
           }}
