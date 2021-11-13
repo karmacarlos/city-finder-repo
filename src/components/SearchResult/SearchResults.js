@@ -1,6 +1,9 @@
 import * as React  from 'react';
 import { getCities  } from '../../apiCalls'
 import { useState, useEffect } from 'react';
+import uniqueString from 'unique-string';
+
+
 
 import Card from './Card'
 import './SearchResults.css'
@@ -54,7 +57,7 @@ const SearchResults = ( {  match } ) => {
   const cityCards = cities.map(cityInfo => {
     return (
       <Card city={cityInfo.city} state={cityInfo.state} population={cityInfo.population}
-       lat={cityInfo.latitude} lon={cityInfo.longitude} />
+       lat={cityInfo.latitude} lon={cityInfo.longitude} key={uniqueString()} />
     )
   })  
 
