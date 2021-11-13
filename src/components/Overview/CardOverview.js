@@ -5,9 +5,11 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useHistory } from 'react-router-dom'
 
 export default function BasicCard( { cityDetails, walkScores, addCity, removeCity }) {
   const [isInComparisonChart, setIsInComparisonChart] = useState(false)
+  const history = useHistory()
 
   return (
     <Card sx={{ minWidth: 275, maxWidth: 450, display: 'flex', flexDirection: 'column',  alignItems: 'center'}}>
@@ -45,6 +47,9 @@ export default function BasicCard( { cityDetails, walkScores, addCity, removeCit
             }}>Delete</Button>
           </>
           }
+          <Button variant="text" sx={{ paddingTop: 3 }} onClick={() => {
+            history.goBack()
+          }}>Bring me back to the cities</Button>
       </CardActions>
     </Card>
   );
