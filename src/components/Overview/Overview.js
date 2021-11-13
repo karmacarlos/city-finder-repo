@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Card from './CardOverview'
 import './Overview.css'
 
-const Overview = ( { match } ) => {
+const Overview = ( { match, addCity, removeCity } ) => {
   const [ cityDetails, setCityDetails ] = useState({})
   const [ walkScores, setWalkScores ] = useState({})
   
@@ -19,8 +19,7 @@ const Overview = ( { match } ) => {
       // console.log(data)
       if (data.originalimage) {
         const cityObject = {
-          latitude: lat,
-          longitude: lon,
+          id: data.pageid,
           description: data.description,
           displayTitle: data.displaytitle,
           state: state,
@@ -30,8 +29,7 @@ const Overview = ( { match } ) => {
         return setCityDetails({...cityObject})
       } else {
         const cityObject = {
-          latitude: lat,
-          longitude: lon,
+          id: data.pageid,
           description: data.description,
           displayTitle: data.displaytitle,
           state: state,
@@ -42,13 +40,22 @@ const Overview = ( { match } ) => {
     })
     getWalkScores(city, state, lat, lon)
     .then(data => {
+      if(data.bike) {
       // console.log(data)
       setWalkScores({
         walkScore: data.walkscore,
         walkDescription: data.description,
         bikeDescription: data.bike.description,
         bikeScore: data.bike.score,
+        isOnChart: 'false',
       })
+    } else {
+      // console.log(data)
+      setWalkScores({
+        walkScore: data.walkscore,
+        walkDescription: data.description,
+      })
+    }
     })
   }, [city, state, lat, lon])
 
@@ -58,7 +65,7 @@ const Overview = ( { match } ) => {
       <div className='city-dashboard'>
         {cityDetails.image ? <img alt={`${cityDetails.displayTitle}`} src={cityDetails.image} /> :
         <h2>We are sorry, we don't have an image for this city</h2>}
-        <Card cityDetails={cityDetails} walkScores={walkScores} />        
+        <Card city={{...cityDetails, ...walkScores}} addCity={addCity} removeCity={removeCity} />        
       </div>
     </div>
    );

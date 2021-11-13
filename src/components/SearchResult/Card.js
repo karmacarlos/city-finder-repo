@@ -26,7 +26,7 @@ export default function BasicCard( { city, state, population, lat, lon } ) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={() => showOverview()}>Learn More</Button>
+        <Button size="small" onClick={() => showOverview()}>Details</Button>
       </CardActions>
     </Card>
   );
