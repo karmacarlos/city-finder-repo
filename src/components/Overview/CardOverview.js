@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import { useHistory } from 'react-router-dom'
 import { ChartContext } from '../../context/ChartContext';
 
-export default function BasicCard( { city }) {
+export default function BasicCard( { city } ) {
   const { chart, addCity, removeCity } = useContext(ChartContext)
   const history = useHistory()
 

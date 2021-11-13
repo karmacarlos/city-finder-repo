@@ -27,6 +27,7 @@ const ComparisonChart = () => {
           }}>Take me back</Button>
       </div>
       <div className='card-container'>
+       {!chart.length && <h2>Try adding some cities to compare</h2>}
        {citiesToRender}
       </div>
     </div>
