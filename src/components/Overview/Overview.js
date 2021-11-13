@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Card from './CardOverview'
 import './Overview.css'
 
-const Overview = ( { match } ) => {
+const Overview = ( { match, addCity, removeCity } ) => {
   const [ cityDetails, setCityDetails ] = useState({})
   const [ walkScores, setWalkScores ] = useState({})
   
@@ -16,11 +16,10 @@ const Overview = ( { match } ) => {
   useEffect(() => {
     getCitySummary(city)
     .then(data => {
-      // console.log(data)
+      console.log(data)
       if (data.originalimage) {
         const cityObject = {
-          latitude: lat,
-          longitude: lon,
+          id: data.pageid,
           description: data.description,
           displayTitle: data.displaytitle,
           state: state,
@@ -30,8 +29,7 @@ const Overview = ( { match } ) => {
         return setCityDetails({...cityObject})
       } else {
         const cityObject = {
-          latitude: lat,
-          longitude: lon,
+          id: data.pageid,
           description: data.description,
           displayTitle: data.displaytitle,
           state: state,
@@ -58,7 +56,7 @@ const Overview = ( { match } ) => {
       <div className='city-dashboard'>
         {cityDetails.image ? <img alt={`${cityDetails.displayTitle}`} src={cityDetails.image} /> :
         <h2>We are sorry, we don't have an image for this city</h2>}
-        <Card cityDetails={cityDetails} walkScores={walkScores} />        
+        <Card cityDetails={cityDetails} walkScores={walkScores} addCity={addCity} removeCity={removeCity} />        
       </div>
     </div>
    );
