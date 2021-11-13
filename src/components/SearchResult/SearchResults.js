@@ -63,7 +63,7 @@ const SearchResults = ( {  match } ) => {
 
   return ( 
     <div className='search-view'>
-      <h1>{`${cityType.split('_')[0]} Cities`}</h1>
+      <h1>{`${cityType.split(' ')[0]} Cities`}</h1>
       <div className='cities-pool'>
       {cityCards}
       </div>
