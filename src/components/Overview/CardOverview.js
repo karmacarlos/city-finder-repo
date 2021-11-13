@@ -1,14 +1,15 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useContext } from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useHistory } from 'react-router-dom'
+import { ChartContext } from '../../context/ChartContext';
 
-export default function BasicCard( { city, addCity, removeCity }) {
-  const [isInComparisonChart, setIsInComparisonChart] = useState(false)
+export default function BasicCard( { city }) {
+  const { chart, addCity, removeCity } = useContext(ChartContext)
   const history = useHistory()
 
   return (
@@ -20,7 +21,7 @@ export default function BasicCard( { city, addCity, removeCity }) {
         <Typography sx={{ fontSize: 20, paddingBottom: 3 }} component="div">
           {city.description}
         </Typography>
-        <Typography variant="body2" sx={{ marginBottom: 3, maxHeight: 250, overflow: 'scroll' }}>
+        <Typography variant="body2" sx={{ marginBottom: 3, height: 250, overflow: 'scroll' }}>
           {city.extract}
         </Typography>
         <Typography sx={{ mb: 1.7 }} color="text.secondary">
@@ -34,19 +35,12 @@ export default function BasicCard( { city, addCity, removeCity }) {
         </Typography>
       </CardContent>
       <CardActions sx={{ display: 'flex', flexDirection: 'column',  alignItems: 'center'}}>
-        {!isInComparisonChart ? <Button variant="contained" onClick={() => {
-          setIsInComparisonChart(!isInComparisonChart)
-          addCity(city, setIsInComparisonChart, isInComparisonChart)
-          }}>Compare</Button> : 
-          <>
-          <Typography sx={{ mb: 1.7 }} color="text.secondary">
-          Added to comparison chart!
-          </Typography>
+        {(chart.some(cityChart => cityChart.id !== city.id) || !chart.length) && 
           <Button variant="contained" onClick={() => {
-            removeCity(city, setIsInComparisonChart, isInComparisonChart)
-            }}>Delete</Button>
-          </>
-          }
+            addCity(city)}}>Compare</Button>}
+        {chart.some(cityChart => cityChart.id === city.id) &&
+          <Button variant="contained" onClick={() => {
+            removeCity(city)}}>Delete</Button>}
           <Button variant="text" sx={{ paddingTop: 3 }} onClick={() => {
             history.goBack()
           }}>Take me back</Button>

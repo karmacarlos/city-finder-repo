@@ -47,6 +47,7 @@ const Overview = ( { match, addCity, removeCity } ) => {
         walkDescription: data.description,
         bikeDescription: data.bike.description,
         bikeScore: data.bike.score,
+        isOnChart: 'false',
       })
     } else {
       // console.log(data)
