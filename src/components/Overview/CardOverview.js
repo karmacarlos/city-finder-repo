@@ -12,6 +12,16 @@ export default function BasicCard( { city }) {
   const { chart, addCity, removeCity } = useContext(ChartContext)
   const history = useHistory()
 
+  const renderButton = () => {
+    if(!chart.length) {
+      return <Button variant="contained" onClick={() => addCity(city)}>Compare</Button>
+    } else if(!chart.some(cityChart => cityChart.id === city.id)) {
+      return <Button variant="contained" onClick={() => addCity(city)}>Compare</Button>
+    } else {
+      return <Button variant="contained" onClick={() => removeCity(city)}>Delete</Button>
+    }
+  }
+
   return (
     <Card sx={{ minWidth: 275, maxWidth: 450, display: 'flex', flexDirection: 'column',  alignItems: 'center'}}>
       <CardContent>
@@ -35,15 +45,10 @@ export default function BasicCard( { city }) {
         </Typography>
       </CardContent>
       <CardActions sx={{ display: 'flex', flexDirection: 'column',  alignItems: 'center'}}>
-        {(chart.some(cityChart => cityChart.id !== city.id) || !chart.length) && 
-          <Button variant="contained" onClick={() => {
-            addCity(city)}}>Compare</Button>}
-        {chart.some(cityChart => cityChart.id === city.id) &&
-          <Button variant="contained" onClick={() => {
-            removeCity(city)}}>Delete</Button>}
-          <Button variant="text" sx={{ paddingTop: 3 }} onClick={() => {
+        {renderButton()}
+        <Button variant="text" sx={{ paddingTop: 3 }} onClick={() => {
             history.goBack()
-          }}>Take me back</Button>
+        }}>Take me back</Button>
       </CardActions>
     </Card>
   );

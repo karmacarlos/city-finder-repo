@@ -1,16 +1,18 @@
 import * as React  from 'react';
+import { useContext } from 'react';
 import uniqueString from 'unique-string';
 import Button from '@mui/material/Button';
 import { useHistory } from 'react-router-dom';
 import Card from '../Overview/CardOverview'
 import './ComparisonChart.css'
+import { ChartContext } from '../../context/ChartContext';
 
-const ComparisonChart = ( { cities, removeCity } ) => {
-
+const ComparisonChart = () => {
+  const { chart } = useContext(ChartContext)
   const history = useHistory()
 
-  const citiesToRender = cities.map(city => {
-    return <Card city={city} key={uniqueString()} removeCity={removeCity} />
+  const citiesToRender = chart.map(city => {
+    return <Card city={city} key={uniqueString()} />
   })
 
   return ( 
