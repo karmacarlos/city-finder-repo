@@ -15,27 +15,31 @@ const bull = (
   </Box>
 );
 
-export default function BasicCard() {
+export default function BasicCard( { cityDetails, walkScores }) {
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card sx={{ minWidth: 275, maxWidth: 450, display: 'flex', flexDirection: 'column',  alignItems: 'center'}}>
       <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Word of the Day
+        <Typography sx={{ fontSize: 25 }} color="text.secondary" gutterBottom>
+          {cityDetails.displayTitle}
         </Typography>
-        <Typography variant="h5" component="div">
-          be{bull}nev{bull}o{bull}lent
+        <Typography sx={{ fontSize: 20, paddingBottom: 3 }} component="div">
+          {cityDetails.description}
         </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
+        <Typography variant="body2" sx={{ paddingBottom: 3 }}>
+          {cityDetails.extract}
         </Typography>
-        <Typography variant="body2">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+        <Typography sx={{ mb: 1.7 }} color="text.secondary">
+          Walk Score: {walkScores.walkScore}
+          <br/>
+          {walkScores.walkDescription}
+          <br/>
+          Bike Score: {walkScores.bikeScore} 
+          <br/>
+          {walkScores.bikeDescription} 
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button variant="contained" >Compare</Button>
       </CardActions>
     </Card>
   );

@@ -58,7 +58,7 @@ const Overview = ( { match } ) => {
       <div className='city-dashboard'>
         {cityDetails.image ? <img alt={`${cityDetails.displayTitle}`} src={cityDetails.image} /> :
         <h2>We are sorry, we don't have an image for this city</h2>}
-        <Card />        
+        <Card cityDetails={cityDetails} walkScores={walkScores} />        
       </div>
     </div>
    );

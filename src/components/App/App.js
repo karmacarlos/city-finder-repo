@@ -10,7 +10,10 @@ import Overview from '../Overview/Overview';
 
 function App(props) {
   // const [ comparisonChart, setComparisonChart ] = useState([])
-  
+  // const queryParam = 50000
+  // fetch(`http://localhost:3001/geoDB/${queryParam}`)
+  // .then(response => response.json()).then(data => console.log(data))
+
   return (
     <div className="App">
       <Switch>
