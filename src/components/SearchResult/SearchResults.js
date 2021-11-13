@@ -2,16 +2,15 @@ import * as React  from 'react';
 import { getCities  } from '../../apiCalls'
 import { useState, useEffect } from 'react';
 import uniqueString from 'unique-string';
-
-
-
+import Button from '@mui/material/Button';
+import { useHistory } from 'react-router-dom';
 import Card from './Card'
 import './SearchResults.css'
 
 const SearchResults = ( {  match } ) => {
   const [ cities, setCities ] = useState([])
   const [ error, setError ] = useState('')
-  
+  const history = useHistory()
   const cityType = match.params.cityType
 
   const filterCitiesData = (data) => {
@@ -63,7 +62,15 @@ const SearchResults = ( {  match } ) => {
 
   return ( 
     <div className='search-view'>
+      <div className='nav'>
+      <Button variant="text" sx={{ paddingTop: 1, fontSize: 30 }} onClick={() => {
+            history.goBack()
+          }}>Home</Button>
       <h1>{`${cityType.split(' ')[0]} Cities`}</h1>
+      <Button variant="text" sx={{ paddingTop: 1, fontSize: 30 }} onClick={() => {
+            history.push('/compare')
+          }}>Compare</Button>
+      </div>
       <div className='cities-pool'>
       {cityCards}
       </div>

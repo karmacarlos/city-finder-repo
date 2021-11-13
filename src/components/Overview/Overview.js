@@ -64,7 +64,7 @@ const Overview = ( { match, addCity, removeCity } ) => {
       <div className='city-dashboard'>
         {cityDetails.image ? <img alt={`${cityDetails.displayTitle}`} src={cityDetails.image} /> :
         <h2>We are sorry, we don't have an image for this city</h2>}
-        <Card cityDetails={cityDetails} walkScores={walkScores} addCity={addCity} removeCity={removeCity} />        
+        <Card city={{...cityDetails, ...walkScores}} addCity={addCity} removeCity={removeCity} />        
       </div>
     </div>
    );

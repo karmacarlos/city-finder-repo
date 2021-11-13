@@ -3,9 +3,9 @@ import { useState } from 'react';
 import './App.css';
 import { Route, Switch, useHistory } from 'react-router-dom'
 import LandingPage from '../LandingPage/LandingPage'
-// import { getCities, getCitySummary, getWalkScores } from '../../apiCalls'
 import SearchResults from '../SearchResult/SearchResults'
 import Overview from '../Overview/Overview';
+import ComparisonChart from '../ComparisonChart/ComparisonChart';
 
 
 function App(props) {
@@ -38,6 +38,8 @@ function App(props) {
         }} />
         <Route exact path='/:city/:state/:lat/:lon' render={( { match } ) => 
           <Overview match={ match } addCity={addCityToChart} removeCity={removeCity} />} />
+        <Route exact path='/compare'  
+          render={() => <ComparisonChart cities={comparisonChart} removeCity={removeCity} />} />  
       </Switch>
     </div>
   );

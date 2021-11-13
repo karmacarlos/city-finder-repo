@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useHistory } from 'react-router-dom'
 
-export default function BasicCard( { cityDetails, walkScores, addCity, removeCity }) {
+export default function BasicCard( { city, addCity, removeCity }) {
   const [isInComparisonChart, setIsInComparisonChart] = useState(false)
   const history = useHistory()
 
@@ -15,41 +15,41 @@ export default function BasicCard( { cityDetails, walkScores, addCity, removeCit
     <Card sx={{ minWidth: 275, maxWidth: 450, display: 'flex', flexDirection: 'column',  alignItems: 'center'}}>
       <CardContent>
         <Typography sx={{ fontSize: 25 }} color="text.secondary" gutterBottom>
-          {cityDetails.displayTitle}
+          {city.displayTitle}
         </Typography>
         <Typography sx={{ fontSize: 20, paddingBottom: 3 }} component="div">
-          {cityDetails.description}
+          {city.description}
         </Typography>
-        <Typography variant="body2" sx={{ paddingBottom: 3 }}>
-          {cityDetails.extract}
+        <Typography variant="body2" sx={{ marginBottom: 3, maxHeight: 250, overflow: 'scroll' }}>
+          {city.extract}
         </Typography>
         <Typography sx={{ mb: 1.7 }} color="text.secondary">
-          Walk Score: {walkScores.walkScore}
+          Walk Score: {city.walkScore}
           <br/>
-          {walkScores.walkDescription}
+          {city.walkDescription}
           <br/>
-          Bike Score: {walkScores.bikeScore} 
+          Bike Score: {city.bikeScore} 
           <br/>
-          {walkScores.bikeDescription} 
+          {city.bikeDescription} 
         </Typography>
       </CardContent>
       <CardActions sx={{ display: 'flex', flexDirection: 'column',  alignItems: 'center'}}>
         {!isInComparisonChart ? <Button variant="contained" onClick={() => {
           setIsInComparisonChart(!isInComparisonChart)
-          addCity({...cityDetails, ...walkScores}, setIsInComparisonChart, isInComparisonChart)
+          addCity(city, setIsInComparisonChart, isInComparisonChart)
           }}>Compare</Button> : 
           <>
           <Typography sx={{ mb: 1.7 }} color="text.secondary">
           Added to comparison chart!
           </Typography>
           <Button variant="contained" onClick={() => {
-            removeCity({...cityDetails, ...walkScores}, setIsInComparisonChart, isInComparisonChart)
+            removeCity(city, setIsInComparisonChart, isInComparisonChart)
             }}>Delete</Button>
           </>
           }
           <Button variant="text" sx={{ paddingTop: 3 }} onClick={() => {
             history.goBack()
-          }}>Bring me back to the cities</Button>
+          }}>Take me back</Button>
       </CardActions>
     </Card>
   );
