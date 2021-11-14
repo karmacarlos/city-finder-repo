@@ -1,21 +1,24 @@
 import * as React  from 'react';
-import { getCitySummary, getWalkScores } from '../../apiCalls'
+import { getCitySummary, getWalkScores } from '../../apiCalls';
 import { useState, useEffect } from 'react';
-import Card from './CardOverview'
-import './Overview.css'
+import Card from './CardOverview';
+import './Overview.css';
+import Button from '@mui/material/Button';
+import { useHistory } from 'react-router-dom';
 
 const Overview = ( { match, addCity, removeCity } ) => {
-  const [ cityDetails, setCityDetails ] = useState({})
-  const [ walkScores, setWalkScores ] = useState({})
-  
-  const city = match.params.city
-  const state = match.params.state
-  const lat = match.params.lat
-  const lon = match.params.lon
+  const [ cityDetails, setCityDetails ] = useState({});
+  const [ walkScores, setWalkScores ] = useState({});
+  const history = useHistory()
+  const city = match.params.city;
+  const state = match.params.state;
+  const lat = match.params.lat;
+  const lon = match.params.lon;
 
   useEffect(() => {
     getCitySummary(city)
     .then(data => {
+      // console.log(data)
       if (data.originalimage) {
         const cityObject = {
           id: data.pageid,
@@ -39,6 +42,7 @@ const Overview = ( { match, addCity, removeCity } ) => {
     })
     getWalkScores(city, state, lat, lon)
     .then(data => {
+      // console.log(data)
       if(data.bike) {
       setWalkScores({
         walkScore: data.walkscore,
@@ -58,7 +62,15 @@ const Overview = ( { match, addCity, removeCity } ) => {
 
   return ( 
     <div className='overview'>
-      <h1>{cityDetails.displayTitle}</h1>
+      <div className='overview-nav'>
+        <Button variant="text" sx={{ paddingTop: 1, fontSize: 30 }} onClick={() => {
+              history.push('/')
+            }}>Home</Button>
+        <h1>{cityDetails.displayTitle}</h1>
+        <Button variant="text" sx={{ paddingTop: 1, fontSize: 30 }} onClick={() => {
+            history.push('/compare')
+          }}>Compare</Button>
+        </div>
       <div className='city-dashboard'>
         {cityDetails.image ? <img alt={`${cityDetails.displayTitle}`} src={cityDetails.image} /> :
         <h2>We are sorry, we don't have an image for this city</h2>}
