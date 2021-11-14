@@ -1,0 +1,31 @@
+
+  [
+    {
+      "city": "Memphis",
+      "country": "United States of America",
+      "countryCode": "US",
+      "id": 117640,
+      "latitude": 35.1175,
+      "longitude": -89.971111111,
+      "name": "Memphis",
+      "population": 646889,
+      "region": "Tennessee",
+      "regionCode": "TN",
+      "type": "CITY",
+      "wikiDataId": "Q16563"
+      },
+      {
+        "city": "Chicago",
+        "country": "United States of America",
+        "countryCode": "US",
+        "id": 120473,
+        "latitude": 41.881944444,
+        "longitude": -87.627777777,
+        "name": "Chicago",
+        "population": 2716000,
+        "region": "Illinois",
+        "regionCode": "IL",
+        "type": "CITY",
+        "wikiDataId": "Q1297"
+      }
+  ]

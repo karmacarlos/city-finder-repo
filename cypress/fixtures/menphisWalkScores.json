@@ -1,0 +1,14 @@
+{
+  "bike": {"score": 56, "description": "Bikeable"},
+  "description": "Car-Dependent",
+  "help_link": "https://www.redfin.com/how-walk-score-works",
+  "logo_url": "https://cdn.walk.sc/images/api-logo.png",
+  "more_info_icon": "https://cdn.walk.sc/images/api-more-info.gif",
+  "more_info_link": "https://www.redfin.com/how-walk-score-works",
+  "snapped_lat": 35.118,
+  "snapped_lon": -89.9715,
+  "status": 1,
+  "transit": {"score": null, "description": null, "summary": null},
+  "updated": "2021-06-18 00:33:43.205551",
+  "walkscore": 43
+}

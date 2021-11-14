@@ -16,7 +16,6 @@ const Overview = ( { match, addCity, removeCity } ) => {
   useEffect(() => {
     getCitySummary(city)
     .then(data => {
-      // console.log(data)
       if (data.originalimage) {
         const cityObject = {
           id: data.pageid,
@@ -41,7 +40,6 @@ const Overview = ( { match, addCity, removeCity } ) => {
     getWalkScores(city, state, lat, lon)
     .then(data => {
       if(data.bike) {
-      // console.log(data)
       setWalkScores({
         walkScore: data.walkscore,
         walkDescription: data.description,
@@ -50,7 +48,6 @@ const Overview = ( { match, addCity, removeCity } ) => {
         isOnChart: 'false',
       })
     } else {
-      // console.log(data)
       setWalkScores({
         walkScore: data.walkscore,
         walkDescription: data.description,
