@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import { useHistory } from 'react-router-dom';
 import Card from './Card'
 import './SearchResults.css'
+import PropTypes from 'prop-types';
 
 const SearchResults = ( {  match } ) => {
   const [ cities, setCities ] = useState([])
@@ -81,3 +82,7 @@ const SearchResults = ( {  match } ) => {
 }
  
 export default SearchResults;
+
+SearchResults.propTypes = {
+  match: PropTypes.object.isRequired
+}

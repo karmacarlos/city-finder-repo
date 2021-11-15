@@ -5,8 +5,9 @@ import Card from './CardOverview';
 import './Overview.css';
 import Button from '@mui/material/Button';
 import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const Overview = ( { match, addCity, removeCity } ) => {
+const Overview = ( { match } ) => {
   const [ cityDetails, setCityDetails ] = useState({});
   const [ walkScores, setWalkScores ] = useState({});
   const [ error, setError ] = useState('')
@@ -76,7 +77,7 @@ const Overview = ( { match, addCity, removeCity } ) => {
       <div className='city-dashboard'>
         {cityDetails.image ? <img alt={`${cityDetails.displayTitle}`} src={cityDetails.image} /> :
         <h2>We are sorry, we don't have an image for this city</h2>}
-        {error ? <h3>We are sorry, try again with another city</h3> : <Card city={{...cityDetails, ...walkScores}} addCity={addCity} removeCity={removeCity} /> }       
+        {error ? <h3>We are sorry, try again with another city</h3> : <Card city={{...cityDetails, ...walkScores}} /> }       
       </div>
     </div>
    );
@@ -84,3 +85,7 @@ const Overview = ( { match, addCity, removeCity } ) => {
  
 export default Overview;
 
+Overview.propTypes = {
+  match: PropTypes.object.isRequired
+}
+ 

@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useHistory } from 'react-router-dom'
 import { ChartContext } from '../../context/ChartContext';
+import PropTypes from 'prop-types';
 
 export default function BasicCard( { city } ) {
   const { chart, dispatch } = useContext(ChartContext)
@@ -53,4 +54,10 @@ export default function BasicCard( { city } ) {
       </CardActions>
     </Card>
   );
+}
+
+BasicCard.propTypes = {
+  city: PropTypes.object.isRequired,
+  chart: PropTypes.array.isRequired,
+  dispatch: PropTypes.func.isRequired
 }
