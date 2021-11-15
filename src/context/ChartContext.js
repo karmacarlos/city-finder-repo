@@ -11,7 +11,7 @@ const ChartContextProvider = (props) => {
 
   useEffect(() => {
     localStorage.setItem('chart', JSON.stringify(chart))
-  })
+  }, [chart])
 
   return ( 
     <ChartContext.Provider value={{ chart, dispatch }}>

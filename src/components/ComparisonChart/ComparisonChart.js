@@ -18,11 +18,11 @@ const ComparisonChart = () => {
   return ( 
     <div className='compare'>
       <div className='nav-compare'>
-      <Button variant="text" sx={{ paddingTop: 1, fontSize: 30 }} onClick={() => {
+      <Button variant="text" sx={{ paddingTop: 1, fontSize: 30, color: '#F26A1B' }} onClick={() => {
             history.push('/')
           }}>Home</Button>
       <h1 className='compare-title'>COMPARE</h1>
-      <Button variant="text" sx={{ paddingTop: 1, fontSize: 30 }} onClick={() => {
+      <Button variant="text" sx={{ paddingTop: 1, fontSize: 30, color: '#F26A1B' }} onClick={() => {
             history.goBack()
           }}>Take me back</Button>
       </div>

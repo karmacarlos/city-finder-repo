@@ -63,11 +63,11 @@ const SearchResults = ( {  match } ) => {
   return ( 
     <div className='search-view'>
       <div className='nav'>
-      <Button variant="text" sx={{ paddingTop: 1, fontSize: 30 }} onClick={() => {
+      <Button variant="text" sx={{ paddingTop: 1, fontSize: 30, color: '#F26A1B' }} onClick={() => {
             history.goBack()
           }}>Home</Button>
       <h1>{`${cityType.split(' ')[0]} Cities`}</h1>
-      <Button variant="text" sx={{ paddingTop: 1, fontSize: 30 }} onClick={() => {
+      <Button variant="text" sx={{ paddingTop: 1, fontSize: 30, color: '#F26A1B' }} onClick={() => {
             history.push('/compare')
           }}>Compare</Button>
       </div>

@@ -5,6 +5,9 @@
   flex-direction: column;
   background-color: #03588C;
   color: white;
+  font-size: 30px;
+  background-image: url('https://www.lifeofpix.com/wp-content/uploads/2017/09/DSC05715-1600x900.jpg');
+  background-size: cover;
 }
 
 .city-dashboard {
