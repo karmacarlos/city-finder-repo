@@ -52,8 +52,10 @@ To run Cypress tests:
 The architecture of the app is based  on 5 main components with 2 MUI components, using context API to access and store cities in the comparison chart wit a reducer function to manage the state updates, using local storage. 
 
 ## Illustrations
-![city-finder-screen-desktop]()
-![city-finder-screen-mobile]()
+![city-finder-desktop](https://user-images.githubusercontent.com/81398850/141854319-2315f669-2e44-4ef5-b672-498a6fb11f81.gif)
+
+![city-finder-mobile](https://user-images.githubusercontent.com/81398850/141854345-2383998b-ceb3-4755-a129-1dc2fe4166cd.gif)
+
 
 ## Wins
 
