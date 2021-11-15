@@ -27,5 +27,19 @@
                 "regionCode": "IL",
                 "type": "CITY",
                 "wikiDataId": "Q1297"
+              },
+              {
+                "city": "Denver",
+                "country": "United States of America",
+                "countryCode": "US",
+                "id": 123456,
+                "latitude": 41.881944444,
+                "longitude": -87.627777777,
+                "name": "Denver",
+                "population": 650000,
+                "region": "Colorado",
+                "regionCode": "CO",
+                "type": "CITY",
+                "wikiDataId": "Q1654"
               }
   ]}
