@@ -9,14 +9,14 @@ import { useHistory } from 'react-router-dom'
 import { ChartContext } from '../../context/ChartContext';
 
 export default function BasicCard( { city } ) {
-  const { chart, addCity, removeCity } = useContext(ChartContext)
+  const { chart, dispatch } = useContext(ChartContext)
   const history = useHistory()
 
   const renderButton = () => {
     if(!chart.length || (!chart.some(cityChart => cityChart.id === city.id) && chart.length < 3)) {
-      return <Button variant="contained" onClick={() => addCity(city)}>Compare</Button>
+      return <Button variant="contained" onClick={() => dispatch({type: 'ADD_CITY', city: city})}>Compare</Button>
     } else if(chart.some(cityChart => cityChart.id === city.id)) {
-      return <Button variant="contained" onClick={() => removeCity(city)}>Delete</Button>
+      return <Button variant="contained" onClick={() => dispatch({type: 'REMOVE_CITY', city: city})}>Delete</Button>
     }
   }
 
