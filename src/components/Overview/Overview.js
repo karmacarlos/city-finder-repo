@@ -65,11 +65,11 @@ const Overview = ( { match, addCity, removeCity } ) => {
   return ( 
     <div className='overview'>
       <div className='overview-nav'>
-        <Button variant="text" sx={{ paddingTop: 1, fontSize: 30 }} onClick={() => {
+        <Button variant="text" sx={{ paddingTop: 1, fontSize: 30, color: '#F26A1B' }} onClick={() => {
               history.push('/')
             }}>Home</Button>
         <h1>{cityDetails.displayTitle}</h1>
-        <Button variant="text" sx={{ paddingTop: 1, fontSize: 30 }} onClick={() => {
+        <Button variant="text" sx={{ paddingTop: 1, fontSize: 30, color: '#F26A1B' }} onClick={() => {
             history.push('/compare')
           }}>Compare</Button>
         </div>

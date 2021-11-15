@@ -5,6 +5,9 @@
   flex-direction: column;
   background-color: #03588C;
   color: white;
+  font-size: 30px;
+  background-image: url('https://www.lifeofpix.com/wp-content/uploads/2017/09/DSC05715-1600x900.jpg');
+  background-size: cover;
 }
 
 .card-container {
@@ -16,8 +19,7 @@
 }
 
 .compare-title {
-  /* padding-left: 200px; */
-  /* padding-right: 50px; */
+  font-size: 40px;
   width: 30vw;
 }
 
@@ -26,4 +28,42 @@
   flex-direction: row;
   justify-content: space-around;
   width: 100vw;
+}
+
+@media screen and (max-width: 450px) {
+  .compare {
+    background-color: #0487D9;
+    background-image: none;
+    align-items: center;
+    height: fit-content;
+  }
+
+  .nav-compare {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-compare h1{
+    margin: 4px;
+  }
+
+  .compare-title {
+    width: auto;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    max-width: 90vw;
+    height: fit-content;
+    gap: 10px;
+  }
+
+  .city-dashboard img {
+    max-width: 70vw;
+    min-width: 50vw;
+    height: auto;
+    padding-bottom: 15px;
+  }
 }

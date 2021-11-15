@@ -1,5 +1,4 @@
 .search-view {
-  background-color: #03588C;
   color: white;
   font-size: 30px;
   height: auto;
@@ -8,6 +7,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url('https://www.lifeofpix.com/wp-content/uploads/2017/09/DSC05715-1600x900.jpg');
+  background-size: cover;
 }
 
 .cities-pool {
@@ -24,4 +25,18 @@
   flex-direction: row;
   justify-content: space-between;
   width: 90vw;
+}
+
+@media screen and (max-width: 450px) {
+  .search-view {
+    font-size: 20px;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+  
+  .nav h1{
+    margin: 4px;
+  }
 }

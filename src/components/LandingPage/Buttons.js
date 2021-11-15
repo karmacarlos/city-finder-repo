@@ -106,7 +106,7 @@ export default function ButtonBases() {
             width: image.width,
           }}
         >
-          <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
+          <ImageSrc style={{ backgroundImage: `url(${image.url})`, border: 'solid 4px white' }} />
           <ImageBackdrop className="MuiImageBackdrop-root" />
           <Image>
             <Typography
