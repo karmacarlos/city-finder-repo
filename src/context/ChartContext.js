@@ -1,23 +1,20 @@
-import React, { createContext, useState } from "react"
+import React, { createContext, useReducer, useEffect } from "react"
+import { chartReducer } from "../reducer/chartReducer";
 
 export const ChartContext = createContext()
 
 const ChartContextProvider = (props) => {
-  const [chart, setChart] = useState([])
+  const [ chart, dispatch ] = useReducer(chartReducer, [], () => {
+    const localData = localStorage.getItem('chart')
+    return localData ? JSON.parse(localData) : []
+  })
 
-  const addCity = (city) => {
-    chart.length < 3 && setChart([...chart, city])
-  }
-
-  const removeCity = (city) => {
-    const filteredCities = chart.filter(cityState => {
-      return city.id !== cityState.id
-    })
-    setChart(filteredCities)
-  }
+  useEffect(() => {
+    localStorage.setItem('chart', JSON.stringify(chart))
+  })
 
   return ( 
-    <ChartContext.Provider value={{ chart, addCity, removeCity }}>
+    <ChartContext.Provider value={{ chart, dispatch }}>
       {props.children}
     </ChartContext.Provider>
    );
