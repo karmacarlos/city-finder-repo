@@ -29,3 +29,41 @@
   justify-content: space-around;
   width: 100vw;
 }
+
+@media screen and (max-width: 450px) {
+  .compare {
+    background-color: #0487D9;
+    background-image: none;
+    align-items: center;
+    height: fit-content;
+  }
+
+  .nav-compare {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-compare h1{
+    margin: 4px;
+  }
+
+  .compare-title {
+    width: auto;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    max-width: 90vw;
+    height: fit-content;
+    gap: 10px;
+  }
+
+  .city-dashboard img {
+    max-width: 70vw;
+    min-width: 50vw;
+    height: auto;
+    padding-bottom: 15px;
+  }
+}

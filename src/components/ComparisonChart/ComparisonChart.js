@@ -24,7 +24,7 @@ const ComparisonChart = () => {
       <h1 className='compare-title'>COMPARE</h1>
       <Button variant="text" sx={{ paddingTop: 1, fontSize: 30, color: '#F26A1B' }} onClick={() => {
             history.goBack()
-          }}>Take me back</Button>
+          }}>Back</Button>
       </div>
       <div className='card-container'>
        {!chart.length && <h2>Try adding some cities to compare</h2>}

@@ -30,3 +30,21 @@
 .welcome-container h3 {
   font-size: 30px;
 }
+
+@media screen and (max-width: 450px) {
+  .welcome-container h1 {
+    font-size: 30px;
+    color: #03588C;
+  }
+  
+  .welcome-container h2 {
+    font-size: 20px;
+    color: #03588C;
+  }
+  
+  .welcome-container h3 {
+    font-size: 20px;
+    color: #03588C;
+  }
+  
+}

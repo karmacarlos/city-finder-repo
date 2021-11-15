@@ -26,3 +26,17 @@
   justify-content: space-between;
   width: 90vw;
 }
+
+@media screen and (max-width: 450px) {
+  .search-view {
+    font-size: 20px;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+  
+  .nav h1{
+    margin: 4px;
+  }
+}

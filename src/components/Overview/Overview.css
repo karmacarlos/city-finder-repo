@@ -22,7 +22,7 @@
   max-width: 40vw;
   min-width: 30vw;
   height: auto;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .overview-nav {
@@ -30,4 +30,40 @@
   flex-direction: row;
   justify-content: space-around;
   width: 100vw;
+}
+
+@media screen and (max-width: 450px) {
+  .overview{
+    background-color: #0487D9;
+    background-image: none;
+    align-items: center;
+    height: fit-content;
+  }
+
+  .overview-nav {
+    flex-direction: column;
+  }
+
+  .overview-nav h1{
+    margin: 4px;
+  }
+
+  .overview {
+    font-size: 20px;
+  }
+
+  .city-dashboard {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    max-width: 90vw;
+    height: fit-content;
+  }
+
+  .city-dashboard img {
+    max-width: 70vw;
+    min-width: 50vw;
+    height: auto;
+    padding-bottom: 15px;
+  }
 }
