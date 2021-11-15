@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# City Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Abstract](#Abstract)
+- [Technologies](#Technologies)
+- [Code Architecture](#Code-Architecture)
+- [Install and Set Up](#Install-and-Set-Up)
+- [Illustrations](#Illustrations)
+- [Wins](#Wins)
+- [Challenges](#Challenges)
+- [Contributors](#Contributors)
+- [Project Specs](#Project-Specs)
 
-In the project directory, you can run:
+## Abstract
 
-### `npm start`
+Web application that helps the user compare cities to move in.
+The goal of this project was to demonstrate proficiency with react.js library by creating an intuitive and easy to use frontend application, allowing the user to search for different cities by size, to see an overview of any selected city, and see a comparison chart of up to 3 cities. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Javascript
+- HTML
+- CSS
+- React
+- React Router
+- ContextAPI
+- Hooks
+- Cypress
+- Express.js
+- Material UI
 
-### `npm test`
+## Install and Set Up
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can see this application on the following link:
 
-### `npm run build`
+[City Finder](https://)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To run Cypress tests:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone down the Readme repo
+2. Cd into `readme`
+3. Run `npm install`
+4. Run `npm start`
+5. Your browser will open the website.
+6. In a separate terminal, run `npx cypress open`
+7. Cypress browser will load, choose a test and see the results
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Code Architecture
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The architecture of the app is based  on 5 main components with 2 MUI components, using context API to access and store cities in the comparison chart wit a reducer function to manage the state updates, using local storage. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Illustrations
+![city-finder-screen-shots]()
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Wins
 
-## Learn More
+- Created a express server to handle API calls and keep keys hidden
+- Implementation of Material UI components
+- Achieved an intuitive and easy to use user interface
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Challenges
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- I had challenges getting an managing the data from 3 different APIs
+- I had challenges doing fetch calls from the express server
 
-### Code Splitting
+## Future Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Change data source for city overview and images
 
-### Analyzing the Bundle Size
+## Contributors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [Carlos Gomez](https://github.com/karmacarlos)
 
-### Making a Progressive Web App
+## Project Specs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/showcase.html)
