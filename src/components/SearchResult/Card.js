@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useHistory } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 export default function BasicCard( { city, state, population, lat, lon } ) {
   const history = useHistory()
@@ -30,4 +31,12 @@ export default function BasicCard( { city, state, population, lat, lon } ) {
       </CardActions>
     </Card>
   );
+}
+
+Card.prototype = {
+  city: PropTypes.string.isRequired,
+  population: PropTypes.number.isRequired,
+  lat: PropTypes.string.isRequired,
+  lon: PropTypes.string.isRequired,
+  state: PropTypes.string.isRequired,
 }

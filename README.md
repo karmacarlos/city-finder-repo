@@ -34,7 +34,7 @@ The goal of this project was to demonstrate proficiency with react.js library by
 
 You can see this application on the following link:
 
-[City Finder](https://)
+[City Finder](https://city-finder-2107.herokuapp.com/)
 
 To run Cypress tests:
 
@@ -52,19 +52,17 @@ To run Cypress tests:
 The architecture of the app is based  on 5 main components with 2 MUI components, using context API to access and store cities in the comparison chart wit a reducer function to manage the state updates, using local storage. 
 
 ## Illustrations
-![city-finder-screen-shots]()
-
+![city-finder-screen-desktop]()
+![city-finder-screen-mobile]()
 
 ## Wins
 
-- Created a express server to handle API calls and keep keys hidden
 - Implementation of Material UI components
 - Achieved an intuitive and easy to use user interface
 
 ## Challenges
 
 - I had challenges getting an managing the data from 3 different APIs
-- I had challenges doing fetch calls from the express server
 
 ## Future Features
 

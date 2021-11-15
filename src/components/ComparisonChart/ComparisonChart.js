@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import Card from '../Overview/CardOverview'
 import './ComparisonChart.css'
 import { ChartContext } from '../../context/ChartContext';
+import PropTypes from 'prop-types'
 
 const ComparisonChart = () => {
   const { chart } = useContext(ChartContext)
@@ -35,3 +36,7 @@ const ComparisonChart = () => {
 }
  
 export default ComparisonChart;
+
+ComparisonChart.propTypes = {
+  chart: PropTypes.array.isRequired
+}
