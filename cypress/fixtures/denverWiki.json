@@ -1,0 +1,22 @@
+{
+  "content_urls": {"desktop": {}, "mobile": {}},
+  "coordinates": {"lat": 38.9101, "lon": -77.0147},
+  "description": "Capital city of COlorado",
+  "description_source": "local",
+  "dir": "ltr",
+  "displaytitle": "Denver",
+  "extract": "Denver is a very beautiful city",
+  "extract_html": "<p><b>Washington, D.C.</b>, formally the <b>District of Columbia</b> (<b>D.C.</b>), also known as just <b>Washington</b>, is the capital city of the United States. It is located on the east bank of the Potomac River which forms its southwestern and southern border with the U.S. state of Virginia, and shares a land border with the U.S. state of Maryland on its remaining sides. The city was named for George Washington, the first president of the United States and a Founding Father, and the federal district is named after Columbia, a female personification of the nation. As the seat of the U.S. federal government and several international organizations, the city is an important world political capital. It is one of the most visited cities in the U.S., seeing over 20 million visitors in 2016.</p>",
+  "lang": "en",
+  "namespace": {"id": 0, "text": ""},
+  "originalimage": {"source": "https://upload.wikimedia.org/wikipedia/commons/3/38/Chicago_montage1.jpg", "width": 2059, "height": 2625},
+  "pageid": 35421,
+  "revision": "1055024088",
+  "thumbnail": {"source": "https://upload.wikimedia.org/wikipedia/commons/thu…51px-National_Mall%2C_Lincoln_Memorial_04448v.jpg', width: 251, height: 320"},
+  "tid": "4f277500-446e-11ec-bbaa-3fe13d75a3c8",
+  "timestamp": "2021-11-13T10:41:15Z",
+  "title": "Denver",
+  "titles": {"canonical": "Washington,_D.C.', normalized: 'Washington, D.C.', display: 'Washington, D.C."},
+  "type": "standard",
+  "wikibase_item": "Q40"   
+}

@@ -1,17 +1,20 @@
 import * as React  from 'react';
-import { getCitySummary, getWalkScores } from '../../apiCalls'
+import { getCitySummary, getWalkScores } from '../../apiCalls';
 import { useState, useEffect } from 'react';
-import Card from './CardOverview'
-import './Overview.css'
+import Card from './CardOverview';
+import './Overview.css';
+import Button from '@mui/material/Button';
+import { useHistory } from 'react-router-dom';
 
 const Overview = ( { match, addCity, removeCity } ) => {
-  const [ cityDetails, setCityDetails ] = useState({})
-  const [ walkScores, setWalkScores ] = useState({})
-  
-  const city = match.params.city
-  const state = match.params.state
-  const lat = match.params.lat
-  const lon = match.params.lon
+  const [ cityDetails, setCityDetails ] = useState({});
+  const [ walkScores, setWalkScores ] = useState({});
+  const [ error, setError ] = useState('')
+  const history = useHistory()
+  const city = match.params.city;
+  const state = match.params.state;
+  const lat = match.params.lat;
+  const lon = match.params.lon;
 
   useEffect(() => {
     getCitySummary(city)
@@ -38,34 +41,42 @@ const Overview = ( { match, addCity, removeCity } ) => {
         return setCityDetails({...cityObject})
       }
     })
+    .catch(error => setError(error))
     getWalkScores(city, state, lat, lon)
     .then(data => {
-      if(data.bike) {
       // console.log(data)
+      if(data.bike) {
       setWalkScores({
         walkScore: data.walkscore,
         walkDescription: data.description,
         bikeDescription: data.bike.description,
         bikeScore: data.bike.score,
-        isOnChart: 'false',
       })
     } else {
-      // console.log(data)
       setWalkScores({
         walkScore: data.walkscore,
         walkDescription: data.description,
       })
     }
     })
+    .catch(error => setError(error))
   }, [city, state, lat, lon])
 
   return ( 
     <div className='overview'>
-      <h1>{cityDetails.displayTitle}</h1>
+      <div className='overview-nav'>
+        <Button variant="text" sx={{ paddingTop: 1, fontSize: 30 }} onClick={() => {
+              history.push('/')
+            }}>Home</Button>
+        <h1>{cityDetails.displayTitle}</h1>
+        <Button variant="text" sx={{ paddingTop: 1, fontSize: 30 }} onClick={() => {
+            history.push('/compare')
+          }}>Compare</Button>
+        </div>
       <div className='city-dashboard'>
         {cityDetails.image ? <img alt={`${cityDetails.displayTitle}`} src={cityDetails.image} /> :
         <h2>We are sorry, we don't have an image for this city</h2>}
-        <Card city={{...cityDetails, ...walkScores}} addCity={addCity} removeCity={removeCity} />        
+        {error ? <h3>We are sorry, try again with another city</h3> : <Card city={{...cityDetails, ...walkScores}} addCity={addCity} removeCity={removeCity} /> }       
       </div>
     </div>
    );

@@ -1,0 +1,15 @@
+ {
+  "bike": {"score": 74, "description": "Very Bikeable"},
+  "description": "Somewhat Walkable",
+  "help_link": "https://www.redfin.com/how-walk-score-works",
+  "logo_url": "https://cdn.walk.sc/images/api-logo.png",
+  "more_info_icon": "https://cdn.walk.sc/images/api-more-info.gif",
+  "more_info_link": "https://www.redfin.com/how-walk-score-works",
+  "snapped_lat": 38.895,
+  "snapped_lon": -77.037,
+  "status": 1,
+  "transit": {"score": null, "description": null, "summary": null},
+  "updated": "2021-10-03 19:21:08.750599",
+  "walkscore": 67,
+  "ws_link": "https://www.walkscore.com/score/Washington-D.C.-DC/lat=38"
+}

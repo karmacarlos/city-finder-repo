@@ -9,12 +9,12 @@ import uniqueString from 'unique-string';
 const images = [
   {
     url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs2ECcUZxb0I74ubeddkS0BiSBH6X9siAmWA&usqp=CAU',
-    title: 'Small city',
+    title: 'Small City',
     width: '30%',
   },
   {
     url: 'https://miro.medium.com/max/2000/1*DQolLFLya-LNCRonBYv0_g.jpeg',
-    title: 'Medium city',
+    title: 'Medium City',
     width: '30%',
   },
   {

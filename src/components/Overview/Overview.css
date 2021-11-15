@@ -21,3 +21,10 @@
   height: auto;
   border-radius: 10px;
 }
+
+.overview-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100vw;
+}

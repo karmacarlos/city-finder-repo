@@ -1,0 +1,17 @@
+ {
+  "description": "Topics referred to by the same term",
+  "description_source": "local",
+  "dir": "ltr",
+  "displaytitle": "Memphis",
+  "extract": "Memphis is the name of:Memphis, Egypt, a former capital of ancient Egypt\nMemphis, Tennessee, a major American city",
+  "extract_html": "<p><b>Memphis</b> is the name of:</p><ul><li>Memphis, Egypt, a former capital of ancient Egypt</li>\n<li>Memphis, Tennessee, a major American city</li></ul>",
+  "lang": "en",
+  "namespace": {"id": 0, "text": ""},
+  "pageid": 2852690,
+  "revision": "1049250768",
+  "tid": "58129400-29fd-11ec-9752-a11e23dbf09d",
+  "timestamp": "2021-10-10T19:07:40Z",
+  "title": "Memphis",
+  "type": "disambiguation",
+  "wikibase_item": "Q4376240"
+}
