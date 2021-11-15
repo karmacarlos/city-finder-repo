@@ -72,7 +72,8 @@ const SearchResults = ( {  match } ) => {
           }}>Compare</Button>
       </div>
       <div className='cities-pool'>
-        {error && <h2>Something went wrong, please try again later</h2>}
+        {(!cities.length && !error) && <h2>...Loading Cities...</h2>}
+        {error && <h3>Something went wrong, please try again later</h3>}
         {cityCards}
       </div>
     </div>

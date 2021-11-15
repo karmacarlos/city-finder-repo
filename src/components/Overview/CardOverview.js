@@ -13,11 +13,9 @@ export default function BasicCard( { city } ) {
   const history = useHistory()
 
   const renderButton = () => {
-    if(!chart.length) {
+    if(!chart.length || (!chart.some(cityChart => cityChart.id === city.id) && chart.length < 3)) {
       return <Button variant="contained" onClick={() => addCity(city)}>Compare</Button>
-    } else if(!chart.some(cityChart => cityChart.id === city.id)) {
-      return <Button variant="contained" onClick={() => addCity(city)}>Compare</Button>
-    } else {
+    } else if(chart.some(cityChart => cityChart.id === city.id)) {
       return <Button variant="contained" onClick={() => removeCity(city)}>Delete</Button>
     }
   }
@@ -49,6 +47,9 @@ export default function BasicCard( { city } ) {
         <Button variant="text" sx={{ paddingTop: 3 }} onClick={() => {
             history.goBack()
         }}>Take me back</Button>
+        {chart.length === 3 && <Typography sx={{ mb: 1.7 }} color="text.secondary">
+                                You're ready to compare
+                               </Typography>}
       </CardActions>
     </Card>
   );
