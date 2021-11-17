@@ -58,6 +58,5 @@ export default function BasicCard( { city } ) {
 
 BasicCard.propTypes = {
   city: PropTypes.object.isRequired,
-  chart: PropTypes.array.isRequired,
-  dispatch: PropTypes.func.isRequired
+  chart: PropTypes.array.isRequired
 }
