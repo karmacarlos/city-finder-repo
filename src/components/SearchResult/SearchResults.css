@@ -7,8 +7,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('https://www.lifeofpix.com/wp-content/uploads/2017/09/DSC05715-1600x900.jpg');
-  background-size: cover;
+  background-color: transparent;
+  max-width: 1200px;
 }
 
 .cities-pool {
@@ -23,8 +23,22 @@
 .nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 90vw;
+  justify-content: space-around;
+  align-items: center;
+  width: 80vw;
+  max-width: 1200px;
+}
+
+.nav h1{
+  font-size: 2.5rem;
+}
+
+.nav img{
+  height: 7rem;
+}
+
+.nav img:hover{
+  cursor: pointer;
 }
 
 @media screen and (max-width: 450px) {
