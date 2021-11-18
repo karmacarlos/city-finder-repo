@@ -7,6 +7,7 @@ import Card from '../Overview/CardOverview'
 import './ComparisonChart.css'
 import { ChartContext } from '../../context/ChartContext';
 import PropTypes from 'prop-types'
+import blueLogo from '../../city-logo.png'
 
 const ComparisonChart = () => {
   const { chart } = useContext(ChartContext)
@@ -19,11 +20,9 @@ const ComparisonChart = () => {
   return ( 
     <div className='compare'>
       <div className='nav-compare'>
-      <Button variant="text" sx={{ paddingTop: 1, fontSize: 30, color: '#F26A1B' }} onClick={() => {
-            history.push('/')
-          }}>Home</Button>
+      <img alt='city-logo' src={blueLogo} onClick={() => history.goBack()} />
       <h1 className='compare-title'>COMPARE</h1>
-      <Button variant="text" sx={{ paddingTop: 1, fontSize: 30, color: '#F26A1B' }} onClick={() => {
+      <Button variant="text" sx={{ paddingTop: 1, fontSize: '2rem', color: '#F26A1B' }} onClick={() => {
             history.goBack()
           }}>Back</Button>
       </div>
