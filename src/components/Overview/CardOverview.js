@@ -22,7 +22,7 @@ export default function BasicCard( { city } ) {
   }
 
   return (
-    <Card sx={{ minWidth: 275, maxWidth: 450, display: 'flex', flexDirection: 'column',  alignItems: 'center'}}>
+    <Card sx={{ minWidth: 275, maxWidth: 300, display: 'flex', flexDirection: 'column',  alignItems: 'center'}}>
       <CardContent sx={{maxHeight: 600}}>
         <Typography sx={{ fontSize: 25 }} color="text.secondary" gutterBottom>
           {city.displayTitle}

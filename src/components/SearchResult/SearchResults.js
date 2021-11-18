@@ -1,12 +1,13 @@
-import * as React  from 'react';
+import * as React  from 'react'
 import { getCities  } from '../../apiCalls'
-import { useState, useEffect } from 'react';
-import uniqueString from 'unique-string';
-import Button from '@mui/material/Button';
-import { useHistory } from 'react-router-dom';
+import { useState, useEffect } from 'react'
+import uniqueString from 'unique-string'
+import Button from '@mui/material/Button'
+import { useHistory } from 'react-router-dom'
 import Card from './Card'
 import './SearchResults.css'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
+import blueLogo from '../../city-logo.png'
 
 const SearchResults = ( {  match } ) => {
   const [ cities, setCities ] = useState([])
@@ -47,6 +48,7 @@ const SearchResults = ( {  match } ) => {
     if (cityType.includes('Big')) {
       getCities(600000)
       .then(data => {
+        console.log(data)
         const filteredCities = filterCitiesData(data)
         setCities(filteredCities)
       })
@@ -64,11 +66,9 @@ const SearchResults = ( {  match } ) => {
   return ( 
     <div className='search-view'>
       <div className='nav'>
-      <Button variant="text" sx={{ paddingTop: 1, fontSize: 30, color: '#F26A1B' }} onClick={() => {
-            history.goBack()
-          }}>Home</Button>
+          <img alt='city-logo' src={blueLogo} onClick={() => history.goBack()} />
       <h1>{`${cityType.split(' ')[0]} Cities`}</h1>
-      <Button variant="text" sx={{ paddingTop: 1, fontSize: 30, color: '#F26A1B' }} onClick={() => {
+      <Button variant="text" sx={{ paddingTop: 1, fontSize: '2rem', color: '#F26A1B' }} onClick={() => {
             history.push('/compare')
           }}>Compare</Button>
       </div>

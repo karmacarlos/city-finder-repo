@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  background-image: url('https://www.lifeofpix.com/wp-content/uploads/2017/09/DSC05715-1600x900.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  font-family: 'Bitter', serif;
+  font-family: 'Catamaran', sans-serif;
 }
 
 .App-logo {

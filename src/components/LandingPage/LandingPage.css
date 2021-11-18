@@ -5,9 +5,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  align-content: center;
   color: white;
-  background-image: url('https://www.lifeofpix.com/wp-content/uploads/2017/09/DSC05715-1600x900.jpg');
-  background-size: cover;
+  background-color: transparent;
+  max-width: 1200px;
 }
 
 .welcome-container {
@@ -18,17 +19,29 @@
   justify-content: flex-start;
 }
 
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container h1 {
+  padding-right: 10px;
+}
+
 .welcome-container h1 {
   font-size: 50px;
 }
 
 .welcome-container h2 {
   font-size: 30px;
-  color: #F26A1B;
+  /* color: #03588C; */
 }
 
 .welcome-container h3 {
   font-size: 30px;
+  /* color: #03588C; */
 }
 
 @media screen and (max-width: 450px) {

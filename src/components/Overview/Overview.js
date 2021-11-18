@@ -6,6 +6,7 @@ import './Overview.css';
 import Button from '@mui/material/Button';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import blueLogo from '../../city-logo.png'
 
 const Overview = ( { match } ) => {
   const [ cityDetails, setCityDetails ] = useState({});
@@ -66,9 +67,7 @@ const Overview = ( { match } ) => {
   return ( 
     <div className='overview'>
       <div className='overview-nav'>
-        <Button variant="text" sx={{ paddingTop: 1, fontSize: 30, color: '#F26A1B' }} onClick={() => {
-              history.push('/')
-            }}>Home</Button>
+      <img alt='city-logo' src={blueLogo} onClick={() => history.goBack()} />
         <h1>{cityDetails.displayTitle}</h1>
         <Button variant="text" sx={{ paddingTop: 1, fontSize: 30, color: '#F26A1B' }} onClick={() => {
             history.push('/compare')
