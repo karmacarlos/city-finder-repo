@@ -5,6 +5,9 @@ import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
 import { StyledEngineProvider } from '@mui/material/styles';
+import Amplify from "aws-amplify";
+import awsExports from "./aws-exports";
+Amplify.configure(awsExports);
 
 const router = (
   <BrowserRouter>
