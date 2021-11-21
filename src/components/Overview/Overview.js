@@ -68,9 +68,9 @@ const Overview = ( { match } ) => {
   return ( 
     <div className='overview'>
       <div className='overview-nav'>
-      <img alt='city-logo' src={blueLogo} onClick={() => history.goBack()} />
+      <img className='city-img' alt='city-logo' src={blueLogo} onClick={() => history.push('/')} />
         <h1>{cityDetails.displayTitle}</h1>
-        <Button variant="text" sx={{ paddingTop: 1, fontSize: 30, color: '#F26A1B' }} onClick={() => {
+        <Button variant="text" sx={{ paddingTop: 1, fontSize: '2rem', color: '#F26A1B' }} onClick={() => {
             history.push('/compare')
           }}>Compare</Button>
         </div>
