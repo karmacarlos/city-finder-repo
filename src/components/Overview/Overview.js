@@ -46,7 +46,7 @@ const Overview = ( { match } ) => {
     .catch(error => setError(error))
     getWalkScores(city, state, lat, lon)
     .then(data => {
-      // console.log(data)
+      console.log(data)
       if(data.bike) {
       setWalkScores({
         walkScore: data.walkscore,
@@ -55,6 +55,7 @@ const Overview = ( { match } ) => {
         bikeScore: data.bike.score,
       })
     } else {
+      console.log(data)
       setWalkScores({
         walkScore: data.walkscore,
         walkDescription: data.description,

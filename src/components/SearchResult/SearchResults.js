@@ -48,7 +48,6 @@ const SearchResults = ( {  match } ) => {
     if (cityType.includes('Big')) {
       getCities(600000)
       .then(data => {
-        console.log(data)
         const filteredCities = filterCitiesData(data)
         setCities(filteredCities)
       })
