@@ -56,8 +56,7 @@ The architecture of the app is based  on 5 main components with 2 MUI components
 If you're interested on seeing the planning and execution of this project you can take a look to the wire frame, architecture diagram and project board:
 
 - [Wire Frame](https://www.figma.com/file/GcUUaJsUScjWSct2hHFCF8/City-Finder?node-id=0%3A1)
-- [Project Board](https://github.com/karmacarlos/city-finder/projects/1)
-- [Architecture Diagram](https://www.figma.com/file/S5YgTinblZQSlPs6GA3k2A/City-Finder?node-id=0%3A1)
+- [Architecture Diagram & Project Board](https://www.figma.com/file/S5YgTinblZQSlPs6GA3k2A/City-Finder?node-id=0%3A1)
 
 ## Illustrations
 ![city-finder-desktop](https://user-images.githubusercontent.com/81398850/141854319-2315f669-2e44-4ef5-b672-498a6fb11f81.gif)
