@@ -15,7 +15,7 @@
 ## Abstract
 
 Web application that helps the user compare cities to move in.
-The goal of this project was to demonstrate proficiency with react.js library by creating an intuitive and easy to use frontend application, allowing the user to search for different cities by size, to see an overview of any selected city, and see a comparison chart of up to 3 cities. 
+The goal of this project was to demonstrate proficiency with react.js library by creating an intuitive and easy to use frontend application, allowing the user to search for different cities by size, to see an overview of any selected city, and see a comparison chart of up to 3 cities.
 
 ## Technologies
 
@@ -28,7 +28,9 @@ The goal of this project was to demonstrate proficiency with react.js library by
 - Hooks
 - Cypress
 - Express.js
+- Node.js
 - Material UI
+- Heroku
 
 ## Install and Set Up
 
@@ -51,6 +53,12 @@ To run Cypress tests:
 
 The architecture of the app is based  on 5 main components with 2 MUI components, using context API to access and store cities in the comparison chart wit a reducer function to manage the state updates, using local storage. 
 
+If you're interested on seeing the planning and execution of this project you can take a look to the wire frame, architecture diagram and project board:
+
+[Wire Frame](https://www.figma.com/file/GcUUaJsUScjWSct2hHFCF8/City-Finder?node-id=0%3A1)
+[Project Board](https://github.com/karmacarlos/city-finder/projects/1)
+[Architecture Diagram](https://www.figma.com/file/S5YgTinblZQSlPs6GA3k2A/City-Finder?node-id=0%3A1)
+
 ## Illustrations
 ![city-finder-desktop](https://user-images.githubusercontent.com/81398850/141854319-2315f669-2e44-4ef5-b672-498a6fb11f81.gif)
 
@@ -60,11 +68,13 @@ The architecture of the app is based  on 5 main components with 2 MUI components
 ## Wins
 
 - Implementation of Material UI components
-- Achieved an intuitive and easy to use user interface
+- Achieved an intuitive and easy to use UI
+- Created a [proxy server](https://github.com/karmacarlos/city-finder-server) to handle all API calls and hide API keys
 
 ## Challenges
 
 - I had challenges getting an managing the data from 3 different APIs
+- I had challenges troubleshooting a deployed proxy server in heroku
 
 ## Future Features
 

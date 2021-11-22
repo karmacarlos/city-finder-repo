@@ -20,7 +20,7 @@ const ComparisonChart = () => {
   return ( 
     <div className='compare'>
       <div className='nav-compare'>
-      <img alt='city-logo' src={blueLogo} onClick={() => history.goBack()} />
+      <img alt='city-logo' src={blueLogo} onClick={() => history.push('/')} />
       <h1 className='compare-title'>COMPARE</h1>
       <Button variant="text" sx={{ paddingTop: 1, fontSize: '2rem', color: '#F26A1B' }} onClick={() => {
             history.goBack()

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Buttons from './Buttons';
 import './LandingPage.css';
-import blueLogo from '../../city-logo.png'
 import whiteLogo from '../../city-logo-white.png'
 
 const LandingPage = () => {

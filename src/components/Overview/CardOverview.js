@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import { useHistory } from 'react-router-dom'
 import { ChartContext } from '../../context/ChartContext';
 import PropTypes from 'prop-types';
+import heartLogo from '../../Heart.jpeg'
 
 export default function BasicCard( { city } ) {
   const { chart, dispatch } = useContext(ChartContext)
@@ -22,22 +23,29 @@ export default function BasicCard( { city } ) {
   }
 
   return (
-    <Card sx={{ minWidth: 275, maxWidth: 300, display: 'flex', flexDirection: 'column',  alignItems: 'center'}}>
+    <Card sx={{ minWidth: 275, maxWidth: 400, maxHeight: 750, display: 'flex', flexDirection: 'column',  alignItems: 'center'}}>
       <CardContent sx={{maxHeight: 600}}>
-        <Typography sx={{ fontSize: 25 }} color="text.secondary" gutterBottom>
+        <Typography sx={{ fontSize: 25, height: 50 }} color="text.secondary" gutterBottom>
           {city.displayTitle}
         </Typography>
-        <Typography sx={{ fontSize: 20, paddingBottom: 3 }} component="div">
+        <Typography sx={{ fontSize: 20, paddingBottom: 3, height: 50 }} component="div">
           {city.description}
         </Typography>
         <Typography variant="body2" sx={{ marginBottom: 3, height: 250, overflow: 'scroll' }}>
           {city.extract}
         </Typography>
-        <Typography sx={{ mb: 1.7 }} color="text.secondary">
-          Walk Score: {city.walkScore}
+        <Typography sx={{ mb: 1.7, fontWeight: 'bold' }} color="#2B86C2">
+          <a href='https://www.walkscore.com/how-it-works/'>
+          <img className='walk-score-logo' alt='walk scores logo' src="https://cdn.walk.sc/images/api-logo.png"/> 
+          </a>
+          {` ${city.walkScore}`}
+          <a href='https://www.redfin.com/how-walk-score-works' >
+            <img className='help-logo' src='https://cdn.walk.sc/images/api-more-info.gif' alt='help logo' />
+          </a>
           <br/>
           {city.walkDescription}
-          <br/>
+          <br/> 
+          <img alt='heart logo' src={heartLogo} className='walk-score-heart' />
           Bike Score: {city.bikeScore} 
           <br/>
           {city.bikeDescription} 
@@ -48,9 +56,6 @@ export default function BasicCard( { city } ) {
         <Button variant="text" sx={{ paddingTop: 3 }} onClick={() => {
             history.goBack()
         }}>Take me back</Button>
-        {chart.length === 3 && <Typography sx={{ mb: 1.7 }} color="text.secondary">
-                                You're ready to compare
-                               </Typography>}
       </CardActions>
     </Card>
   );
