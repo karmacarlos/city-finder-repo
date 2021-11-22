@@ -1,13 +1,13 @@
 describe('Searching big cities flow', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
-    .intercept('Get', 'https://wft-geo-db.p.rapidapi.com/v1/geo/cities?limit=20&countryIds=Q30&minPopulation=600000', { fixture: 'bigCities'})
+    .intercept('Get', 'https://city-finder-server.herokuapp.com/geoDB/600000', { fixture: 'bigCities'})
     .as('big-cities-search')
   })
 
   it('Should be able to see a greeting message and 3 buttons to choose the size of the city to find', () => {
     cy.get('h1')
-    .should('contain', 'Welcome to city finder')
+    .should('contain', 'Welcome')
     .get(':nth-child(1) > .css-1yrzk2j > .MuiTypography-root')
     .should('contain', 'Small City')
     .get(':nth-child(2) > .css-1yrzk2j > .MuiTypography-root')
@@ -17,7 +17,7 @@ describe('Searching big cities flow', () => {
   })
 
   it('should be able to search cities by size', () => {
-    cy.intercept('Get', 'https://wft-geo-db.p.rapidapi.com/v1/geo/cities?limit=20&countryIds=Q30&minPopulation=600000', { fixture: 'bigCities'})
+    cy.intercept('Get', 'https://city-finder-server.herokuapp.com/geoDB/600000', { fixture: 'bigCities'})
     .as('big-cities-search')
     .get(':nth-child(3) > .css-1yrzk2j > .MuiTypography-root')
     .click()
@@ -28,25 +28,25 @@ describe('Searching big cities flow', () => {
   })
 
   it('Should be able to see a picture and overview of the selected city', () => {
-    cy.intercept('https://en.wikipedia.org/api/rest_v1/page/summary/Chicago', { fixture: 'chicagoWiki'})
+    cy.intercept('Get','https://city-finder-server.herokuapp.com/wiki/Chicago', { fixture: 'chicagoWiki'})
     .as('chicago wiki')
-    .intercept('https://fe-cors-proxy.herokuapp.com/', { fixture: 'chicagoWalkScores'})
+    .intercept('https://city-finder-server.herokuapp.com/walkScores/Chicago/IL/41.8819/-87.6278', { fixture: 'chicagoWalkScores'})
     .as('chicago walkScores')
     .visit('http://localhost:3000/Chicago/IL/41.8819/-87.6278')
     .get('.MuiTypography-gutterBottom')
     .should('contain', 'Chicago')
     .get('.MuiTypography-body2')
     .should('contain', 'Chicago')
-    .get('.css-5ccnad-MuiTypography-root')
-    .should('contain', 'Walk Score')
-    .should('contain', 'Bike Score')
+    .get('.css-hpkpbd-MuiTypography-root')
+    .should('contain', 'Walk')
+    .should('contain', 'Bike')
   })
 
   it('Should be able to add and remove a city from a comparison chart', () => {
     cy.visit('http://localhost:3000/Chicago/IL/41.8819/-87.6278')
-    .intercept('https://en.wikipedia.org/api/rest_v1/page/summary/Chicago', { fixture: 'chicagoWiki'})
+    .intercept('Get','https://city-finder-server.herokuapp.com/wiki/Chicago', { fixture: 'chicagoWiki'})
     .as('chicago wiki')
-    .intercept('https://fe-cors-proxy.herokuapp.com/', { fixture: 'chicagoWalkScores'})
+    .intercept('https://city-finder-server.herokuapp.com/walkScores/Chicago/IL/41.8819/-87.6278', { fixture: 'chicagoWalkScores'})
     .as('chicago walkScores')
     .get('.MuiButton-contained')
     .should('contain', 'Compare')
@@ -57,10 +57,14 @@ describe('Searching big cities flow', () => {
   })
 
   it('Should be able to see a comparison chart of selected cities', () => {
-    cy.intercept('https://en.wikipedia.org/api/rest_v1/page/summary/Chicago', { fixture: 'chicagoWiki'})
+    cy.intercept('Get','https://city-finder-server.herokuapp.com/wiki/Chicago', { fixture: 'chicagoWiki'})
     .as('chicago wiki')
-    .intercept('https://fe-cors-proxy.herokuapp.com/', { fixture: 'chicagoWalkScores'})
+    .intercept('https://city-finder-server.herokuapp.com/walkScores/Chicago/IL/41.8819/-87.6278', { fixture: 'chicagoWalkScores'})
     .as('chicago walkScores')
+    .intercept('Get','https://city-finder-server.herokuapp.com/wiki/Memphis', { fixture: 'memphisWiki'})
+    .as('memphis wiki')
+    .intercept('Get','https://city-finder-server.herokuapp.com/walkScores/Memphis/TN/35.1175/-89.9711', { fixture: 'memphisWalkScores'})
+    .as('memphis walkscore')
     .get(':nth-child(3) > .css-1yrzk2j > .MuiTypography-root')
     .click()
     .get(':nth-child(1) > .MuiCardActions-root > .MuiButton-root')
