@@ -30,7 +30,7 @@ describe('Searching big cities flow', () => {
   it('Should be able to see a picture and overview of the selected city', () => {
     cy.intercept('Get','https://city-finder-server.herokuapp.com/wiki/Chicago', { fixture: 'chicagoWiki'})
     .as('chicago wiki')
-    .intercept('https://city-finder-server.herokuapp.com/walkScores/Chicago/IL/41.8819/-87.6278', { fixture: 'chicagoWalkScores'})
+    .intercept('Get','https://city-finder-server.herokuapp.com/walkScores/Chicago/IL/41.8819/-87.6278', { fixture: 'chicagoWalkScores'})
     .as('chicago walkScores')
     .visit('http://localhost:3000/Chicago/IL/41.8819/-87.6278')
     .get('.MuiTypography-gutterBottom')
