@@ -72,10 +72,11 @@ If you're interested on seeing the planning and execution of this project you ca
 - Implementation of Material UI components
 - Achieved an intuitive and easy to use UI
 - Created a [proxy server](https://github.com/karmacarlos/city-finder-server) to handle all API calls and hide API keys
+- Implemented global state management with local storage to avoid the application breaking if the user refreshes the page
 
 ## Challenges
 
-- I had challenges getting an managing the data from 3 different APIs
+- I had challenges getting and managing the data from 3 different APIs
 - I had challenges troubleshooting a deployed proxy server in heroku
 
 ## Future Features
