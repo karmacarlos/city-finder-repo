@@ -64,6 +64,8 @@ If you're interested on seeing the planning and execution of this project you ca
 
 ![city-finder-mobile](https://user-images.githubusercontent.com/81398850/141854345-2383998b-ceb3-4755-a129-1dc2fe4166cd.gif)
 
+![Screen Shot 2021-11-21 at 5 54 46 PM](https://user-images.githubusercontent.com/81398850/142787572-6b2c58e0-6e87-411f-a20b-2ed064868eda.png)
+
 
 ## Wins
 
