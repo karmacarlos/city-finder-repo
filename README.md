@@ -89,3 +89,5 @@ If you're interested on seeing the planning and execution of this project you ca
 ## Project Specs
 
 - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/showcase.html)
+
+### Note: this is a copy of the original repository, the original repository is kept private because some API keys are exposed on the commit history
