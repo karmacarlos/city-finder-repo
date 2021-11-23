@@ -53,7 +53,7 @@ To run Cypress tests:
 
 The architecture of the app is based  on 5 main components with 2 MUI components, using context API to access and store cities in the comparison chart wit a reducer function to manage the state updates, using local storage. 
 
-If you're interested on seeing the planning and execution of this project you can take a look to the wire frame, architecture diagram and project board:
+If you're interested in seeing the planning and execution of this project you can take a look at the wireframe, architecture diagram, and project board:
 
 - [Wire Frame](https://www.figma.com/file/GcUUaJsUScjWSct2hHFCF8/City-Finder?node-id=0%3A1)
 - [Architecture Diagram & Project Board](https://www.figma.com/file/S5YgTinblZQSlPs6GA3k2A/City-Finder?node-id=0%3A1)
