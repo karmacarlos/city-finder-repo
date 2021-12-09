@@ -21,7 +21,6 @@ const Overview = ( { match } ) => {
   useEffect(() => {
     getCitySummary(city)
     .then(data => {
-      // console.log(data)
       if (data.originalimage) {
         const cityObject = {
           id: data.pageid,
@@ -43,10 +42,12 @@ const Overview = ( { match } ) => {
         return setCityDetails({...cityObject})
       }
     })
-    .catch(error => setError(error))
+    .catch(error => {
+      console.log('wiki error',error)
+      setError(error)
+    })
     getWalkScores(city, state, lat, lon)
     .then(data => {
-      console.log(data)
       if(data.bike) {
       setWalkScores({
         walkScore: data.walkscore,
@@ -55,14 +56,16 @@ const Overview = ( { match } ) => {
         bikeScore: data.bike.score,
       })
     } else {
-      console.log(data)
       setWalkScores({
         walkScore: data.walkscore,
         walkDescription: data.description,
       })
     }
     })
-    .catch(error => setError(error))
+    .catch(error => {
+      console.log('walkscore error',error)
+      setError(error)
+    })
   }, [city, state, lat, lon])
 
   return ( 

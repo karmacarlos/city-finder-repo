@@ -21,6 +21,14 @@ describe('Sad path testing', () => {
     .as('chicago-walk-score-error')
     .get('h2')
     .should('contain', 'We are sorry, we don\'t have an image for this city')
+  })
+
+  it('Should be able to see a message if no image and information of the city was retrieved', () => {
+    cy.visit('http://localhost:3000/Chicago/IL/41.8819/-87.6278')
+    cy.intercept('Get','https://city-finder-server.herokuapp.com/wiki/Chicago', { })
+    .as('chicago-wiki-error')
+    cy.intercept('Get','https://city-finder-server.herokuapp.com/walkScores/Chicago/IL/41.8819/-87.6278', { })
+    .as('chicago-walk-score-error')
     .get('h3')
     .should('contain', 'We are sorry, try again with another city')
   })
