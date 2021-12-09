@@ -35,7 +35,3 @@ const ComparisonChart = () => {
 }
  
 export default ComparisonChart;
-
-ComparisonChart.propTypes = {
-  chart: PropTypes.array.isRequired
-}
