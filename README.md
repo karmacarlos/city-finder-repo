@@ -41,7 +41,7 @@ You can see this application on the following link:
 To run Cypress tests:
 
 1. Clone down the Readme repo
-2. Cd into `readme`
+2. Cd into `city-finder-repo`
 3. Run `npm install`
 4. Run `npm start`
 5. Your browser will open the website.
