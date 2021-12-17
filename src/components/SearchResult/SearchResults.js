@@ -28,31 +28,19 @@ const SearchResults = ( {  match } ) => {
     return newCities
   }
 
+  const citySize = {
+    Small: { num: 10000 },
+    Medium: { num: 50000 },
+    Big: { num: 600000 }
+  }
+
   useEffect(() => {
-    if (cityType.includes('Small')) {
-      getCities(10000)
-      .then(data => {
-        const filteredCities = filterCitiesData(data)
-        setCities(filteredCities)
-      })
-      .catch(error => setError(error))
-    } 
-    if (cityType.includes('Medium')) {
-      getCities(50000)
-      .then(data => {
-        const filteredCities = filterCitiesData(data)
-        setCities(filteredCities)
-      })
-      .catch(error => setError(error))
-    }
-    if (cityType.includes('Big')) {
-      getCities(600000)
-      .then(data => {
-        const filteredCities = filterCitiesData(data)
-        setCities(filteredCities)
-      })
-      .catch(error => setError(error))
-    }
+    getCities(citySize[cityType].num)
+    .then(data => {
+      const filteredCities = filterCitiesData(data)
+      setCities(filteredCities)
+    })
+    .catch(error => setError(error))
   }, [cityType])
 
   const cityCards = cities.map(cityInfo => {
